@@ -18,14 +18,20 @@
       margin-top: 40px;
     }
   }
-
+ 
   > .actions {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: var(--z-index-bottom-nav);
+    background-color: var(--welcome-bg-end);
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 16px;
+    // margin: 0 16px;
     font-size: 20px;
-    padding: 24px 0;
+    padding: 24px 16px;
     color: var(--welcome-text);
     > .fake {
       visibility: hidden;
