@@ -2,7 +2,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(to bottom, #5d33be, #8f4cd7);
+  background-image: linear-gradient(to bottom, var(--welcome-bg-start), var(--welcome-bg-end));
   > header {
     flex-shrink: 0;
     display: flex;
