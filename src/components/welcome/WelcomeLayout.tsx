@@ -28,3 +28,5 @@ export const WelcomeLayout: FunctionalComponent = (
     <div class={s.actions}>{buttons?.()}</div>
   </div>
 )
+
+WelcomeLayout.displayName = 'WelcomeLayout'
