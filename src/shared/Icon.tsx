@@ -9,17 +9,22 @@ export type IconName =
   | 'mangosteen'
   | 'pig'
   | 'menu'
+  | 'export'
+  | 'notify'
 
 export const Icon = defineComponent({
   props: {
     name: {
       type: String as PropType<IconName>,
       required: true
+    },
+    onClick: {
+      type: Function as PropType<(e: MouseEvent | TouchEvent) => void>
     }
   },
   setup(props) {
     return () => (
-      <svg class={s.icon}>
+      <svg class={s.icon} onClick={props.onClick}>
         <use xlinkHref={'#' + props.name}></use>
       </svg>
     )
