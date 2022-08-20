@@ -15,7 +15,7 @@ export const StartPage = defineComponent({
           </Button>
         </div>
         <div>
-          <FloatButton></FloatButton>
+          <FloatButton name={'add'} />
         </div>
       </div>
     )
