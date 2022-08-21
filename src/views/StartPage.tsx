@@ -1,3 +1,4 @@
+import { MainLayout } from '@/Layouts/MainLayout'
 import { Button } from '@/shared/Button'
 import { Center } from '@/shared/Center'
 import { FloatButton } from '@/shared/FloatButton'
@@ -21,33 +22,44 @@ export const StartPage = defineComponent({
 
     return () => (
       <div>
+        <MainLayout>
+          {{
+            title: '山竹记账',
+            icon: <Icon name={'menu'} class={s.navIcon} onClick={onClickMenu} />
+          }}
+        </MainLayout>
+
         <nav>
           <Navbar>
             {{
-              default: () => '山竹记账',
+              title: () => '山竹记账',
               icon: () => (
                 <Icon name={'menu'} class={s.navIcon} onClick={onClickMenu} />
+              ),
+              default: () => (
+                <>
+                  <Center class={s.pig_wrapper}>
+                    <Icon class={s.pig} name={'pig'} />
+                  </Center>
+                  <div class={s.button_wrapper}>
+                    <RouterLink to={'/items/create'}>
+                      <Button class={s.button} onClick={onClick}>
+                        开始记账
+                      </Button>
+                    </RouterLink>
+                  </div>
+
+                  <RouterLink to={'/items/create'}>
+                    <FloatButton name={'add'} />
+                  </RouterLink>
+                  {overlayVisible.value && (
+                    <Overlay onClose={() => (overlayVisible.value = false)} />
+                  )}
+                </>
               )
             }}
           </Navbar>
         </nav>
-        <Center class={s.pig_wrapper}>
-          <Icon class={s.pig} name={'pig'} />
-        </Center>
-        <div class={s.button_wrapper}>
-          <RouterLink to={'/items/create'}>
-            <Button class={s.button} onClick={onClick}>
-              开始记账
-            </Button>
-          </RouterLink>
-        </div>
-
-        <RouterLink to={'/items/create'}>
-          <FloatButton name={'add'} />
-        </RouterLink>
-        {overlayVisible.value && (
-          <Overlay onClose={() => (overlayVisible.value = false)} />
-        )}
       </div>
     )
   }
