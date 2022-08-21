@@ -22,8 +22,8 @@ export const ItemCreate = defineComponent({
                   // onUpdateSelected={(name: string) => (refKind.value = name)}
                   v-model:selected={refKind.value}
                 >
-                  <Tab name="支出">icon 列表</Tab>
-                  <Tab name="收入">icon 列表</Tab>
+                  <Tab name="支出">icon 列表1</Tab>
+                  <Tab name="收入">icon 列表2</Tab>
                 </Tabs>
               </>
             )
