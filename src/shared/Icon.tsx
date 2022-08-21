@@ -11,6 +11,7 @@ export type IconName =
   | 'menu'
   | 'export'
   | 'notify'
+  | 'left'
 
 export const Icon = defineComponent({
   props: {
