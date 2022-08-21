@@ -12,6 +12,9 @@ import { ThirdActions } from '../components/welcome/ThirdActions'
 import { StartPage } from '../views/StartPage'
 
 import { Welcome } from '../views/Welcome'
+import { ItemPage } from '@/views/ItemPage'
+import { ItemList } from '@/components/Item/ItemList'
+import { ItemCreate } from '@/components/Item/ItemCreate'
 
 export const routes: RouteRecordRaw[] = [
   {
@@ -48,5 +51,16 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/start',
     component: StartPage
+  },
+  {
+    path: '/items',
+    component: ItemPage,
+    children: [
+      { path: '', component: ItemList },
+      {
+        path: 'create',
+        component: ItemCreate
+      }
+    ]
   }
 ]
