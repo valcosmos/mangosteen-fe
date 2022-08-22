@@ -11,6 +11,7 @@
   "dependencies": {
     "svgo": "^2.8.0",
     "svgstore": "^3.0.1",
+    "vant": "^3.6.0",
     "vue": "^3.2.37",
     "vue-router": "^4.1.3"
   },

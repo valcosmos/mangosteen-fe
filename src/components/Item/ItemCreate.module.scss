@@ -1,3 +1,11 @@
-.wrapper {
-  color: #000;
+.wrapper,
+.navIcon {
+  background: transparent;
+}
+
+.inputPad_wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
