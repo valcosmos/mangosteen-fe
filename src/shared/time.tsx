@@ -4,7 +4,7 @@ export const time = (date = new Date()) => {
   }
 
   const api = {
-    format: (pattern: string) => {
+    format: (pattern = 'YYYY-MM-DD') => {
       // YYYY MM DD HH mm ss sss
       const year = date.getFullYear()
       const month = date.getMonth() + 1
