@@ -28,10 +28,10 @@
 .buttons {
   display: grid;
   grid-template-areas:
-    "n1 n2 n3 d"
-    "n4 n5 n6 d"
-    "n7 n8 n9 s"
-    "n0 n0 nd s";
+    'n1 n2 n3 d'
+    'n4 n5 n6 d'
+    'n7 n8 n9 s'
+    'n0 n0 nd s';
   grid-auto-rows: 48px;
   grid-auto-columns: 1fr;
   gap: 1px;
@@ -40,7 +40,7 @@
   border-top: 1px solid var(--button-border-color);
   > button {
     border: none;
-    background: var(--button-bg);
+    background: var(--number-button-bg);
     &:nth-child(1) {
       grid-area: n1;
     }
@@ -79,8 +79,8 @@
     }
     &:nth-child(13) {
       grid-area: s;
-      background: var(--button-bg-important);
-      color: var(--button-text-important);
+      background: var(--number-button-bg-important);
+      color: var(--number-button-text-important);
     }
   }
 }
