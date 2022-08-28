@@ -6,7 +6,15 @@
   font-size: var(--button-font-size);
   border-radius: var(--button-radius);
   height: var(--button-height);
-  &:hover {
-    border: 1px solid red;
+  &.normal {
+    background-color: transparent;
+  }
+  &.important {
+    background-color: transparent;
+
+  }
+  &.danger {
+    background: var(--button-bg-danger);
+    border-color: var(--button-bg-danger);
   }
 }
