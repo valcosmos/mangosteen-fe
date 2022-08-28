@@ -1,4 +1,4 @@
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { Icon } from './Icon'
 import s from './Overlay.module.scss'
@@ -8,16 +8,16 @@ export const Overlay = defineComponent({
       type: Function as PropType<() => void>
     }
   },
-  setup(props) {
+  setup: (props, context) => {
     const close = () => {
       props.onClose?.()
     }
+    const onClickSignIn = () => {}
     return () => (
       <>
         <div class={s.mask} onClick={close}></div>
-
         <div class={s.overlay}>
-          <section class={s.currentUser}>
+          <section class={s.currentUser} onClick={onClickSignIn}>
             <h2>未登录用户</h2>
             <p>点击这里登录</p>
           </section>
@@ -25,7 +25,7 @@ export const Overlay = defineComponent({
             <ul class={s.action_list}>
               <li>
                 <RouterLink to="/statistics" class={s.action}>
-                  <Icon name="chart" class={s.icon} />
+                  <Icon name="charts" class={s.icon} />
                   <span>统计图表</span>
                 </RouterLink>
               </li>
@@ -44,6 +44,23 @@ export const Overlay = defineComponent({
             </ul>
           </nav>
         </div>
+      </>
+    )
+  }
+})
+
+export const OverlayIcon = defineComponent({
+  setup: (props, context) => {
+    const refOverlayVisible = ref(false)
+    const onClickMenu = () => {
+      refOverlayVisible.value = !refOverlayVisible.value
+    }
+    return () => (
+      <>
+        <Icon name="menu" class={s.icon} onClick={onClickMenu} />
+        {refOverlayVisible.value && (
+          <Overlay onClose={() => (refOverlayVisible.value = false)} />
+        )}
       </>
     )
   }
