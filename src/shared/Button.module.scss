@@ -7,11 +7,10 @@
   border-radius: var(--button-radius);
   height: var(--button-height);
   &.normal {
-    background-color: transparent;
+    // background-color: transparent;
   }
   &.important {
-    background-color: transparent;
-
+    // background-color: transparent;
   }
   &.danger {
     background: var(--button-bg-danger);
