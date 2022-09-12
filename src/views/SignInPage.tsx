@@ -1,6 +1,7 @@
 import { MainLayout } from '@/Layouts/MainLayout'
 import { Button } from '@/shared/Button'
 import { Form, FormItem } from '@/shared/Form'
+import { http } from '@/shared/Http'
 import { Icon } from '@/shared/Icon'
 import { validate } from '@/shared/validate'
 import { defineComponent, reactive } from 'vue'
@@ -34,6 +35,14 @@ export const SignInPage = defineComponent({
           { key: 'code', type: 'required', message: '必填' }
         ])
       )
+    }
+
+    const onError = () => {}
+    const onClickSendValidationCode = async () => {
+      const response = await http.post('/validation_codes', {
+        email: formData.email
+      })
+      
     }
 
     return () => (
