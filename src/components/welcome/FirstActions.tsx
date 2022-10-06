@@ -15,3 +15,5 @@ export const FirstActions: FunctionalComponent = () => (
 )
 
 FirstActions.displayName = 'FirstActions'
+
+export default FirstActions

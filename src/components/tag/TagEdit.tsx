@@ -5,3 +5,4 @@ export const TagEdit = defineComponent({
     return () => <div>edit</div>
   }
 })
+export default TagEdit

@@ -7,6 +7,17 @@ import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          if (id.includes('echarts')) return 'echarts'
+          if (id.includes('vant')) return 'vant'
+          if (id.includes('node_modules')) return 'vendor'
+        }
+      }
+    }
+  },
   plugins: [
     vue(),
     vueJSX({

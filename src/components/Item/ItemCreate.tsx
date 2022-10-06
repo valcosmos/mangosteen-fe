@@ -53,3 +53,5 @@ export const ItemCreate = defineComponent({
     )
   }
 })
+
+export default ItemCreate

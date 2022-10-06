@@ -17,3 +17,5 @@ export const SecondActions: FunctionalComponent = () => {
 }
 
 SecondActions.displayName = 'FirstActions'
+
+export default SecondActions

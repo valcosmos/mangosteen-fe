@@ -37,3 +37,6 @@ export const Second: FunctionalComponent = () => (
 )
 
 Second.displayName = 'Second'
+
+
+export default Second

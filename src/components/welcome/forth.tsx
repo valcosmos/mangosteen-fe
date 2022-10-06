@@ -38,3 +38,5 @@ export const Forth: FunctionalComponent = () => (
 )
 
 Forth.displayName = 'Forth'
+
+export default Forth

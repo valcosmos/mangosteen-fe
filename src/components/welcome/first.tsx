@@ -68,3 +68,5 @@ export const First: FunctionalComponent = () => (
 )
 
 First.displayName = 'First'
+
+export default First

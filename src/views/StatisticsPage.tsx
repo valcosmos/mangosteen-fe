@@ -9,3 +9,5 @@ export const StatisticsPage = defineComponent({
     return () => <TimeTabsLayout component={Charts} />
   }
 })
+
+export default StatisticsPage

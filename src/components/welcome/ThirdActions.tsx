@@ -14,3 +14,5 @@ export const ThirdActions: FunctionalComponent = () => {
 }
 
 ThirdActions.displayName = 'ThirdActions'
+
+export default ThirdActions
