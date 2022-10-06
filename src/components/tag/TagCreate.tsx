@@ -43,8 +43,8 @@ export const TagCreate = defineComponent({
           default: () => (
             <form class={s.form} onSubmit={onSubmit}>
               <div class={s.formRow}>
-                <label class={s.formLabel}>
-                  <span class={s.formItem_name}>标签名</span>
+                <label>
+                  <span>标签名</span>
                   <div class={s.formItem_value}>
                     <input
                       v-model={formData.name}
@@ -57,12 +57,12 @@ export const TagCreate = defineComponent({
                 </label>
               </div>
               <div class={s.formRow}>
-                <label class={s.formLabel}>
-                  <span class={s.formItem_name}>符号 {formData.sign}</span>
+                <label>
+                  <span>符号 {formData.sign}</span>
                   <div class={s.formItem_value}>
                     <EmojiSelect
                       v-model={formData.sign}
-                      class={[s.formItem, s.emojiList, s.error]}
+                      class={[s.formItem, s.error]}
                     />
                   </div>
                   <div class={s.formItem_errorHint}>
@@ -83,3 +83,5 @@ export const TagCreate = defineComponent({
     )
   }
 })
+
+export default TagCreate

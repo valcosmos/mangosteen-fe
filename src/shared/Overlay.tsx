@@ -25,7 +25,7 @@ export const Overlay = defineComponent({
             <ul class={s.action_list}>
               <li>
                 <RouterLink to="/statistics" class={s.action}>
-                  <Icon name="charts" class={s.icon} />
+                  <Icon name={'chart'} class={s.icon} />
                   <span>统计图表</span>
                 </RouterLink>
               </li>

@@ -1,25 +1,25 @@
 import { RouteRecordRaw } from 'vue-router'
-import { First } from '../components/welcome/First'
-import { Forth } from '../components/welcome/Forth'
-import { Second } from '../components/welcome/Second'
-import { Third } from '../components/welcome/Third'
+// import { First } from '../components/welcome/First'
+// import { Second } from '../components/welcome/Second'
+// import { Third } from '../components/welcome/Third'
+// import { Forth } from '../components/welcome/Forth'
 
-import { FirstActions } from '../components/welcome/FirstActions'
-import { ForthActions } from '../components/welcome/ForthActions'
-import { SecondActions } from '../components/welcome/SecondActions'
-import { ThirdActions } from '../components/welcome/ThirdActions'
+// import { FirstActions } from '../components/welcome/FirstActions'
+// import { SecondActions } from '../components/welcome/SecondActions'
+// import { ThirdActions } from '../components/welcome/ThirdActions'
+// import { ForthActions } from '../components/welcome/ForthActions'
 
-import { StartPage } from '../views/StartPage'
+// import { StartPage } from '../views/StartPage'
 
-import { Welcome } from '../views/Welcome'
-import { ItemPage } from '@/views/ItemPage'
-import { ItemList } from '@/components/Item/ItemList'
-import { ItemCreate } from '@/components/Item/ItemCreate'
-import { TagPage } from '@/views/TagPage'
-import { TagCreate } from '@/components/tag/TagCreate'
-import { TagEdit } from '@/components/tag/TagEdit'
-import { SignInPage } from '@/views/SignInPage'
-import { StatisticsPage } from '@/views/StatisticsPage'
+// import { Welcome } from '../views/Welcome'
+// import { ItemPage } from '@/views/ItemPage'
+// import { ItemList } from '@/components/Item/ItemList'
+// import { ItemCreate } from '@/components/Item/ItemCreate'
+// import { TagPage } from '@/views/TagPage'
+// import { TagCreate } from '@/components/tag/TagCreate'
+// import { TagEdit } from '@/components/tag/TagEdit'
+// import { SignInPage } from '@/views/SignInPage'
+// import { StatisticsPage } from '@/views/StatisticsPage'
 
 export const routes: RouteRecordRaw[] = [
   {
@@ -28,63 +28,75 @@ export const routes: RouteRecordRaw[] = [
   },
   {
     path: '/welcome',
-    component: Welcome,
+    component: () => import('@/views/Welcome'),
     children: [
       { path: '', redirect: '/welcome/1' },
       {
         path: '1',
         name: 'Welcome1',
-        components: { main: First, footer: FirstActions }
+        components: {
+          main: () => import('../components/welcome/First'),
+          footer: () => import('../components/welcome/FirstActions')
+        }
       },
       {
         path: '2',
         name: 'Welcome2',
-        components: { main: Second, footer: SecondActions }
+        components: {
+          main: () => import('../components/welcome/Second'),
+          footer: () => import('../components/welcome/SecondActions')
+        }
       },
       {
         path: '3',
         name: 'Welcome3',
-        components: { main: Third, footer: ThirdActions }
+        components: {
+          main: () => import('../components/welcome/Third'),
+          footer: () => import('../components/welcome/ThirdActions')
+        }
       },
       {
         path: '4',
         name: 'Welcome4',
-        components: { main: Forth, footer: ForthActions }
+        components: {
+          main: () => import('../components/welcome/Forth'),
+          footer: () => import('../components/welcome/ForthActions')
+        }
       }
     ]
   },
   {
     path: '/start',
-    component: StartPage
+    component: () => import('@/views/StartPage')
   },
   {
     path: '/items',
-    component: ItemPage,
+    component: () => import('@/views/ItemPage'),
     children: [
-      { path: '', component: ItemList },
+      { path: '', component: () => import('@/components/Item/ItemList') },
       {
         path: 'create',
-        component: ItemCreate
+        component: () => import('@/components/Item/ItemCreate')
       }
     ]
   },
   {
     path: '/tags',
-    component: TagPage,
+    component: () => import('@/views/TagPage'),
     children: [
       {
         path: 'create',
-        component: TagCreate
+        component: () => import('@/components/tag/TagCreate')
       },
-      { path: ':id/edit', component: TagEdit }
+      { path: ':id/edit', component: () => import('@/components/tag/TagEdit') }
     ]
   },
   {
     path: '/sign_in',
-    component: SignInPage
+    component: () => import('@/views/SignInPage')
   },
   {
     path: '/statistics',
-    component: StatisticsPage
+    component: () => import('@/views/StatisticsPage')
   }
 ]

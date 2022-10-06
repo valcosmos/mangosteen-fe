@@ -13,3 +13,6 @@ export const ForthActions = () => (
 )
 
 ForthActions.displayName = 'ForthActions'
+
+
+export default ForthActions

@@ -50,7 +50,7 @@ export const StartPage = defineComponent({
                   </div>
 
                   <RouterLink to={'/items/create'}>
-                    <FloatButton name={'add'} />
+                    <FloatButton iconName={'add'} />
                   </RouterLink>
                   {overlayVisible.value && (
                     <Overlay onClose={() => (overlayVisible.value = false)} />
@@ -64,3 +64,6 @@ export const StartPage = defineComponent({
     )
   }
 })
+
+
+export default StartPage

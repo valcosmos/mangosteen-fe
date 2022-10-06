@@ -41,3 +41,5 @@ export const Third = () => (
 )
 
 Third.displayName = 'Third'
+
+export default Third
